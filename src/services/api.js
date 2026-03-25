@@ -1,8 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://smartstudy-backend-production-4971.up.railway.app",
-});
+  baseURL: "https://smartstudy-backend-production-4971.up.railway.app"});
 
 const auth = JSON.parse(localStorage.getItem("auth"));
 if (auth) {

@@ -12,7 +12,7 @@ function Register() {
 
   const handleRegister = async () => {
     try {
-      await API.post("/auth/register", {
+      await API.post("/register", {
         email,
         password,
         role

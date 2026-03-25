@@ -16,9 +16,12 @@ function Login() {
   
 const handleLogin = async () => {
   try {
-    setAuthHeader(email, password);
+    const token = btoa(email + ":" + password);
 
-    // Store user info in localStorage
+    // Set header manually BEFORE request
+    API.defaults.headers.common["Authorization"] = "Basic " + token;
+
+    // Store user info
     localStorage.setItem("user", JSON.stringify({
       email: email,
       role: role
@@ -36,7 +39,6 @@ const handleLogin = async () => {
     alert("Invalid Credentials or Role Mismatch");
   }
 };
-
 
   return (
   <div
